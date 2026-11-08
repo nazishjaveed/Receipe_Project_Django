@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block start %}
+
+    <div class="container mt-4">
+
+        <h1>Best Django Tutorial</h1>
+        <h2>Home Page</h2>
+
+        <table class="table table-bordered table-striped">
+
+            <thead>
+                <tr>
+                    <th scope="col">Sr</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Can Vote</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for person in people %}
+
+                <tr>
+
+                    <th scope="row">
+                        {{ forloop.counter }}
+                    </th>
+
+                    <td>
+                        {{ person.name }}
+                    </td>
+
+                    <td>
+                        {{ person.age }}
+                    </td>
+
+                    <td>
+                        {% if person.age >= 18 %}
+
+                            <span style="background-color: green; color: white; padding: 5px;">
+                                👍 Can Vote
+                            </span>
+
+                        {% else %}
+
+                            <span style="background-color: red; color: white; padding: 5px;">
+                                😒 Cannot Vote
+                            </span>
+
+                        {% endif %}
+                    </td>
+
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+{% endblock %}
