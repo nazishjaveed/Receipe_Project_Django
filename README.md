@@ -1,1 +1,1 @@
-# Receipe Project
+# Receipe Project Using Django
